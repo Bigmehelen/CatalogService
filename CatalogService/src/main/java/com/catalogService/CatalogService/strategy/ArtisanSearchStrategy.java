@@ -1,5 +1,4 @@
 package com.catalogService.CatalogService.strategy;
-
 import com.catalogService.CatalogService.model.Artisan;
 import com.catalogService.CatalogService.model.Category;
 
