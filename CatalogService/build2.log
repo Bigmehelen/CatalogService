@@ -1,0 +1,109 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.catalogService:CatalogService >------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ CatalogService ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ CatalogService ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 14 source files with javac [debug parameters release 21] to target\classes
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by lombok.permit.Permit
+WARNING: Please consider reporting this to the maintainers of class lombok.permit.Permit
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/controller/CatalogController.java:[3,45] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: package com.catalogService.CatalogService.dto
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogService.java:[5,45] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: package com.catalogService.CatalogService.dto
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/controller/CatalogController.java:[22,32] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: class com.catalogService.CatalogService.controller.CatalogController
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/controller/CatalogController.java:[31,27] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: class com.catalogService.CatalogService.controller.CatalogController
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/controller/CatalogController.java:[37,32] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: class com.catalogService.CatalogService.controller.CatalogController
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogService.java:[11,10] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: interface com.catalogService.CatalogService.service.ArtisanCatalogService
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogService.java:[12,5] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: interface com.catalogService.CatalogService.service.ArtisanCatalogService
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogService.java:[13,10] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: interface com.catalogService.CatalogService.service.ArtisanCatalogService
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogServiceImpl.java:[5,45] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: package com.catalogService.CatalogService.dto
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogServiceImpl.java:[25,17] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: class com.catalogService.CatalogService.service.ArtisanCatalogServiceImpl
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogServiceImpl.java:[32,12] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: class com.catalogService.CatalogService.service.ArtisanCatalogServiceImpl
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogServiceImpl.java:[39,17] cannot find symbol
+  symbol:   class ArtisanResponse
+  location: class com.catalogService.CatalogService.service.ArtisanCatalogServiceImpl
+[INFO] 12 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.093 s
+[INFO] Finished at: 2026-03-25T09:13:01+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project CatalogService: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/controller/CatalogController.java:[3,45] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: package com.catalogService.CatalogService.dto
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogService.java:[5,45] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: package com.catalogService.CatalogService.dto
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/controller/CatalogController.java:[22,32] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: class com.catalogService.CatalogService.controller.CatalogController
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/controller/CatalogController.java:[31,27] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: class com.catalogService.CatalogService.controller.CatalogController
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/controller/CatalogController.java:[37,32] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: class com.catalogService.CatalogService.controller.CatalogController
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogService.java:[11,10] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: interface com.catalogService.CatalogService.service.ArtisanCatalogService
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogService.java:[12,5] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: interface com.catalogService.CatalogService.service.ArtisanCatalogService
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogService.java:[13,10] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: interface com.catalogService.CatalogService.service.ArtisanCatalogService
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogServiceImpl.java:[5,45] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: package com.catalogService.CatalogService.dto
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogServiceImpl.java:[25,17] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: class com.catalogService.CatalogService.service.ArtisanCatalogServiceImpl
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogServiceImpl.java:[32,12] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: class com.catalogService.CatalogService.service.ArtisanCatalogServiceImpl
+[ERROR] /C:/Users/Dell/Documents/CatalogService/CatalogService/src/main/java/com/catalogService/CatalogService/service/ArtisanCatalogServiceImpl.java:[39,17] cannot find symbol
+[ERROR]   symbol:   class ArtisanResponse
+[ERROR]   location: class com.catalogService.CatalogService.service.ArtisanCatalogServiceImpl
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

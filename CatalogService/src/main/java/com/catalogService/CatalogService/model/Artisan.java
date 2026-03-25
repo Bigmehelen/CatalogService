@@ -28,6 +28,9 @@ public class Artisan {
     @Column(nullable = false)
     private String skills;
 
+    @Column(nullable = false)
+    private String profileImageUrl;
+
     private String description;
     
     private Double priceRange;

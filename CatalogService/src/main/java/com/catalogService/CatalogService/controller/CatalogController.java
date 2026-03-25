@@ -1,5 +1,7 @@
 package com.catalogService.CatalogService.controller;
 
+import com.catalogService.CatalogService.dto.response.ArtisanResponse;
+import com.catalogService.CatalogService.dto.request.CreateArtisanRequest;
 import com.catalogService.CatalogService.model.Artisan;
 import com.catalogService.CatalogService.model.Category;
 import com.catalogService.CatalogService.service.ArtisanCatalogService;
@@ -17,22 +19,22 @@ public class CatalogController {
     private final ArtisanCatalogService artisanCatalogService;
 
     @GetMapping("/search")
-    public ResponseEntity<List<Artisan>> searchArtisans(
+    public ResponseEntity<List<ArtisanResponse>> searchArtisans(
             @RequestParam Category category,
             @RequestParam(required = false) String criteria) {
         
-        List<Artisan> artisans = artisanCatalogService.searchArtisans(category, criteria);
+        List<ArtisanResponse> artisans = artisanCatalogService.searchArtisans(category, criteria);
         return ResponseEntity.ok(artisans);
     }
     
     @PostMapping("/artisans")
-    public ResponseEntity<Artisan> addArtisan(@RequestBody Artisan artisan) {
-        Artisan savedArtisan = artisanCatalogService.saveArtisan(artisan);
+    public ResponseEntity<ArtisanResponse> addArtisan(@RequestBody CreateArtisanRequest request) {
+        ArtisanResponse savedArtisan = artisanCatalogService.saveArtisan(request);
         return ResponseEntity.ok(savedArtisan);
     }
 
     @GetMapping("/artisans")
-    public ResponseEntity<List<Artisan>> getAllArtisans() {
+    public ResponseEntity<List<ArtisanResponse>> getAllArtisans() {
         return ResponseEntity.ok(artisanCatalogService.getAllArtisans());
     }
 }
