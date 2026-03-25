@@ -2,7 +2,6 @@ package com.catalogService.CatalogService.controller;
 
 import com.catalogService.CatalogService.dto.response.ArtisanResponse;
 import com.catalogService.CatalogService.dto.request.CreateArtisanRequest;
-import com.catalogService.CatalogService.model.Artisan;
 import com.catalogService.CatalogService.model.Category;
 import com.catalogService.CatalogService.service.ArtisanCatalogService;
 import lombok.RequiredArgsConstructor;
