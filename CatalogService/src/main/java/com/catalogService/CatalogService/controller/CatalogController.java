@@ -27,8 +27,9 @@ public class CatalogController {
     }
     
     @PostMapping("/artisans")
+    @org.springframework.security.access.prepost.PreAuthorize("hasAuthority('ROLE_ARTISAN')")
     public ResponseEntity<ArtisanResponse> addArtisan(@RequestBody CreateArtisanRequest request) {
-        ArtisanResponse savedArtisan = artisanCatalogService.saveArtisan(request);
+        ArtisanResponse savedArtisan = artisanCatalogService.createArtisan(request);
         return ResponseEntity.ok(savedArtisan);
     }
 

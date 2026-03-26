@@ -28,7 +28,8 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/catalog/**").permitAll() // Adjust as needed
+                .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/v1/catalog/**").permitAll()
+                .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/v1/catalog/artisans").hasAuthority("ROLE_ARTISAN")
                 .anyRequest().authenticated()
             )
             .addFilterBefore(new JwtAuthenticationFilter(jwtUtils), UsernamePasswordAuthenticationFilter.class);
