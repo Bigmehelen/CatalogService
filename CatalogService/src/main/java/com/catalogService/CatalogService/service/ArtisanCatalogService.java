@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ArtisanCatalogService {
     List<ArtisanResponse> searchArtisans(Category category, String criteria);
-    ArtisanResponse saveArtisan(CreateArtisanRequest request);
+    ArtisanResponse createArtisan(CreateArtisanRequest request);
     List<ArtisanResponse> getAllArtisans();
 }

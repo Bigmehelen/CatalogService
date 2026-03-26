@@ -30,7 +30,7 @@ public class ArtisanCatalogServiceImpl implements ArtisanCatalogService {
     }
 
     @Override
-    public ArtisanResponse saveArtisan(CreateArtisanRequest request) {
+    public ArtisanResponse createArtisan(CreateArtisanRequest request) {
         Artisan artisanToSave = artisanMapper.toEntity(request);
         Artisan savedArtisan = artisanRepository.save(artisanToSave);
         return artisanMapper.toResponse(savedArtisan);
