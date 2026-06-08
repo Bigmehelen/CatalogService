@@ -1,17 +1,16 @@
-version: '3.8'
 
 services:
   postgres:
     image: postgres:16
-    container_name: catalog-db
+    container_name: shared-db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: catalog_db
     ports:
       - "5432:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
     restart: unless-stopped
 
   catalog-service:
@@ -27,18 +26,19 @@ services:
       - postgres
     restart: unless-stopped
 
-  # Optional: pgAdmin for database management UI
-  # pgadmin:
-  #   image: dpage/pgadmin4:latest
-  #   container_name: catalog-pgadmin
-  #   environment:
-  #     PGADMIN_DEFAULT_EMAIL: admin@admin.com
-  #     PGADMIN_DEFAULT_PASSWORD: admin
-  #   ports:
-  #     - "5050:80"
-  #   depends_on:
-  #     - postgres
-  #   restart: unless-stopped
+  user-service:
+    build: ./UserService
+    container_name: user-service
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/user_db?schema=public
+      - JWT_SECRET=super_secret_jwt_key_2024
+      - CATALOG_SERVICE_URL=http://catalog-service:8080
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
 
 volumes:
   postgres-data:

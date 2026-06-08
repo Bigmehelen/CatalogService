@@ -18,7 +18,7 @@ classDiagram
     }
 
     class ArtisanCatalogServiceImpl {
-        -SearchStrategyFactory searchStrategyFactory
+        -ArtisanSearchStrategy artisanSearchStrategy
         -ArtisanRepository artisanRepository
         -ArtisanMapper artisanMapper
         +searchArtisans(Category, String) List~ArtisanResponse~
@@ -57,22 +57,8 @@ classDiagram
         +toResponseList(List~Artisan~) List~ArtisanResponse~
     }
 
-    class SearchStrategyFactory {
-        -Map~Category, ArtisanSearchStrategy~ strategies
-        +getStrategy(Category) ArtisanSearchStrategy
-    }
-
     class ArtisanSearchStrategy {
-        <<interface>>
-        +search(String) List~Artisan~
-    }
-
-    class BraiderSearchStrategy {
-        +search(String) List~Artisan~
-    }
-
-    class NailTechSearchStrategy {
-        +search(String) List~Artisan~
+        +search(Category, String) List~Artisan~
     }
 
     class UserServiceClient {
@@ -81,12 +67,9 @@ classDiagram
 
     CatalogController --> ArtisanCatalogService : uses
     ArtisanCatalogService <|.. ArtisanCatalogServiceImpl : implements
-    ArtisanCatalogServiceImpl --> SearchStrategyFactory : uses
+    ArtisanCatalogServiceImpl --> ArtisanSearchStrategy : uses
     ArtisanCatalogServiceImpl --> ArtisanRepository : uses
     ArtisanCatalogServiceImpl --> ArtisanMapper : uses
-    SearchStrategyFactory o-- ArtisanSearchStrategy : manages
-    ArtisanSearchStrategy <|.. BraiderSearchStrategy : implements
-    ArtisanSearchStrategy <|.. NailTechSearchStrategy : implements
     ArtisanRepository --> Artisan : manages
     Artisan --> Category : has
     ArtisanCatalogServiceImpl --> UserServiceClient : uses

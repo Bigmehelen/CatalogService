@@ -1,0 +1,2 @@
+CREATE DATABASE catalog_db;
+CREATE DATABASE user_db;
