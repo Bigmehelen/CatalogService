@@ -6,13 +6,39 @@ import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import jakarta.annotation.PostConstruct;
 import java.security.Key;
+import java.security.SecureRandom;
+import java.util.Base64;
 
 @Component
 public class JwtUtils {
 
-    @Value("${jwt.secret}")
+    private Key key;
+
+    @Value("${jwt.secret:}")
     private String jwtSecret;
+
+    @PostConstruct
+    public void init() {
+        if (jwtSecret == null || jwtSecret.trim().isEmpty()) {
+            SecureRandom secureRandom = new SecureRandom();
+            byte[] keyBytes = new byte[64];
+            secureRandom.nextBytes(keyBytes);
+            this.key = Keys.hmacShaKeyFor(keyBytes);
+        } else {
+            byte[] keyBytes;
+            try {
+                keyBytes = Base64.getDecoder().decode(jwtSecret.trim());
+                if (keyBytes.length < 32) {
+                    keyBytes = jwtSecret.getBytes();
+                }
+            } catch (IllegalArgumentException e) {
+                keyBytes = jwtSecret.getBytes();
+            }
+            this.key = Keys.hmacShaKeyFor(keyBytes);
+        }
+    }
 
     public String getUserIdFromToken(String token) {
         return getClaimsFromToken(token).get("userId", String.class);
@@ -32,7 +58,6 @@ public class JwtUtils {
     }
 
     private Claims getClaimsFromToken(String token) {
-        Key key = Keys.hmacShaKeyFor(jwtSecret.getBytes());
         return Jwts.parserBuilder()
                 .setSigningKey(key)
                 .build()
